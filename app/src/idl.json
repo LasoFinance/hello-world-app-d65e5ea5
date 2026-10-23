@@ -1,0 +1,109 @@
+{
+  "address": "Fd7LhKeKSSVka7CZPAA2bKjFcgLbkLDt8JUFFL3L17xB",
+  "metadata": {
+    "name": "hello_world",
+    "version": "0.1.0",
+    "spec": "0.1.0"
+  },
+  "instructions": [
+    {
+      "name": "say_hello",
+      "discriminator": [
+        250,
+        163,
+        169,
+        119,
+        25,
+        42,
+        108,
+        31
+      ],
+      "accounts": [
+        {
+          "name": "author",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "greeting",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  114,
+                  101,
+                  101,
+                  116,
+                  105,
+                  110,
+                  103
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "author"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "message",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Greeting",
+      "discriminator": [
+        233,
+        33,
+        173,
+        132,
+        154,
+        68,
+        130,
+        231
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "MessageTooLong",
+      "msg": "Message must be 64 bytes or fewer"
+    }
+  ],
+  "types": [
+    {
+      "name": "Greeting",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "author",
+            "type": "pubkey"
+          },
+          {
+            "name": "message",
+            "type": "string"
+          },
+          {
+            "name": "updates",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ]
+}

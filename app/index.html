@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hello World on Solana devnet</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#0e0f13;color:#eee;max-width:640px;margin:0 auto;padding:24px}
+h1{font-size:28px}.card{background:#181a21;border-radius:12px;padding:16px;margin:16px 0}
+button{background:#7c5cff;color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:15px;cursor:pointer;margin:4px 4px 4px 0}
+input{width:100%;box-sizing:border-box;padding:10px;border-radius:8px;border:1px solid #333;background:#0e0f13;color:#eee;font-size:15px}
+a{color:#9db4ff}.mono{font-family:monospace;font-size:12px;word-break:break-all}.msg{font-size:18px}.muted{color:#999;font-size:13px}
+</style></head><body>
+<h1>Hello, Solana devnet</h1>
+<p class="muted">A tiny program that stores one greeting per wallet. Program: <a id="plink" target="_blank"></a></p>
+<div class="card"><b>Your wallet</b>
+<div id="wallets"></div><div id="status" class="muted">No wallet connected.</div></div>
+<div class="card"><b>Say hello</b><br><br>
+<input id="msg" maxlength="64" value="Hello, world!"><br><br>
+<button id="send" disabled>Send greeting</button><div id="tx" class="muted"></div></div>
+<div class="card"><b>Latest greetings on-chain</b><div id="list" class="muted">Loading…</div></div>
+<script src="bundle.js"></script></body></html>
